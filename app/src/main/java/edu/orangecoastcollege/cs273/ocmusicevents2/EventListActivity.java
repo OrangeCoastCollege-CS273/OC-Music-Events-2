@@ -10,12 +10,20 @@ import android.widget.ListView;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * An activity that displays a list of items by binding to a View, and exposes event handlers when the user selects an item.
+ */
 public class EventListActivity extends ListActivity {
 
     private List<MusicEvent> mAllEventsList;
 
 
-
+    /**
+     * Called when the activity is starting.
+     * Fills the list with data from JSON
+     * sets the list adapter to a new {@link EventListAdapter} with the fetched list
+     * @param savedInstanceState Saved instance if the activity was previously ran
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +39,14 @@ public class EventListActivity extends ListActivity {
 
     }
 
+    /**
+     * On a click of a list item creates an intent and loads it with data about the event
+     *
+     * @param l ListView holding the item
+     * @param v Clicked view
+     * @param position Position of clicked view
+     * @param id The row id of the item that was clicked
+     */
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
 

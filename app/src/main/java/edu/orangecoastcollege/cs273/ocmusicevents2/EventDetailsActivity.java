@@ -13,8 +13,18 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * An activity to host the details of a particular Event
+ */
 public class EventDetailsActivity extends AppCompatActivity {
 
+    /**
+     * Called when the activity is starting
+     *
+     * Loads the data from the Intent which opened up the activity
+     * Then loads the data into the Views
+     * @param savedInstanceState Saved instance if the activity was previously ran
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +68,10 @@ public class EventDetailsActivity extends AppCompatActivity {
         eventAddress2TextView.setText(address2);
     }
 
+    /**
+     * On click closes the Activity
+     * @param v The view which was clicked
+     */
     protected void goBackToList(View v)
     {
         finish();

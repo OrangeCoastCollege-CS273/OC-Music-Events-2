@@ -19,15 +19,20 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * Created by sbadajoz on 9/26/2017.
+ * Creates a custom inflated UI for the list of events
  */
-
 public class EventListAdapter extends ArrayAdapter<MusicEvent> {
 
     private Context mContext;
     private int mResource;
     private List<MusicEvent> mAllEventsList;
 
+    /**
+     * Creates an {@link EventListAdapter}
+     * @param context The current context
+     * @param resource The resource ID for a layout file containing a TextView to use when instantiating Views
+     * @param objects The objects to represent in the ListView
+     */
     public EventListAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<MusicEvent>objects) {
         super(context, resource, objects);
         mContext = context;
@@ -35,6 +40,14 @@ public class EventListAdapter extends ArrayAdapter<MusicEvent> {
         mAllEventsList = objects;
     }
 
+    /**
+     * Get a View that displays the data at the specified position in the data set.
+     *
+     * @param position The position of the item within the adapter's data set of the item whose view we want.
+     * @param convertView The old view to reuse, if possible.
+     * @param parent The parent that this view will eventually be attached to
+     * @return A View corresponding to the data at the specified position.
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
